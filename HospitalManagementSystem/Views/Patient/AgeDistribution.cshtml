@@ -1,0 +1,18 @@
+﻿@model List<HospitalManagementSystem.ViewModels.AgeDistributionViewModel>
+
+<h3>Age Distribution by Gender Hypertension</h3>
+<table class="table">
+    <tr>
+        <th>Gender</th>
+        <th>Average Age</th>
+        <th>Medical Condition</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Gender</td>
+            <td>@item.AverageAge.ToString("F2")</td>
+            <td>@item.MedicalCondition</td>
+        </tr>
+    }
+</table>

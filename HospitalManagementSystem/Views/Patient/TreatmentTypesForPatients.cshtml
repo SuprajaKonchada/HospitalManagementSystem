@@ -1,0 +1,32 @@
+﻿@model List<HospitalManagementSystem.ViewModels.TreatmentViewModel>
+
+<h3>Treatment Types for Patients with Hypertension</h3>
+
+@foreach (var treatment in Model)
+{
+    <h5>@treatment.TreatmentType:</h5>
+    @if (treatment.Patients != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var patient in treatment.Patients)
+                {
+                    <tr>
+                        <td>@patient.FirstName</td>
+                        <td>@patient.Age</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No patients found for this treatment.</p>
+    }
+}
